@@ -26,7 +26,21 @@
                 <a href="Contact.html">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="Login.html" class="signin-link">Sign in</a>
+                <a href="Login.html" class="signin-link" id="signin-link">Sign in</a>
+                <div class="profile-section" id="profile-section" style="display: none;">
+                    <button class="profile-avatar" id="profile-avatar">
+                        <span id="avatar-initials">U</span>
+                    </button>
+                    <div class="profile-dropdown" id="profile-dropdown" style="display: none;">
+                        <div class="profile-header">
+                            <p id="profile-name">User</p>
+                            <p id="profile-email" style="font-size: 0.85rem; color: #666;">email@example.com</p>
+                        </div>
+                        <hr style="margin: 10px 0; border: none; border-top: 1px solid #ddd;">
+                        <a href="Profile.html" class="profile-link">View Profile</a>
+                        <button class="profile-link" id="logout-btn" style="border: none; background: none; cursor: pointer; width: 100%; text-align: left;">Logout</button>
+                    </div>
+                </div>
                 <a href="Contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span></span><span></span><span></span>

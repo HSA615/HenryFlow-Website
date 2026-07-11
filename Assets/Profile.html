@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sign in to your HenryFlow account.">
-    <title>HenryFlow | Sign In</title>
+    <meta name="description" content="Manage your HenryFlow account.">
+    <title>HenryFlow | Profile</title>
     <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,34 +49,37 @@
         </div>
     </header>
 
-    <main>
-        <div class="auth-wrap">
-            <div class="form-card auth-card reveal">
-                <h1>Welcome back</h1>
-                <p>Sign in to your account to manage your business.</p>
+    <main style="min-height: 80vh; padding: 60px 0;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h1 style="margin-bottom: 30px;">Your Profile</h1>
 
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="login-email">Email Address</label>
-                        <input type="email" id="login-email" name="email" class="form-input" placeholder="email@example.com" required>
+                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; margin: 0 auto 20px;">
+                            <span id="profile-avatar-large">U</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" id="login-password" name="password" class="form-input" placeholder="••••••••" required>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; font-size: 0.85rem;">
-                        <label style="cursor: pointer; color: var(--slate-600);">
-                            <input type="checkbox"> Remember me
-                        </label>
-                        <a href="Contact.html">Forgot password?</a>
-                    </div>
-                    <div id="login-status" class="form-status" style="display: none; margin-bottom: 16px;"></div>
-                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                </form>
 
-                <p class="auth-alt">
-                    Don't have an account? <a href="SignUp.html"><strong>Create one</strong></a>
-                </p>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Full Name</label>
+                        <p id="profile-fullname" style="color: var(--text); padding: 12px; background: var(--bg-alt); border-radius: 8px;">Loading...</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Email</label>
+                        <p id="profile-email-display" style="color: var(--text); padding: 12px; background: var(--bg-alt); border-radius: 8px;">Loading...</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Marketing Opt-in</label>
+                        <p id="profile-marketing" style="color: var(--text); padding: 12px; background: var(--bg-alt); border-radius: 8px;">Loading...</p>
+                    </div>
+
+                    <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border);">
+                        <button id="logout-profile-btn" class="btn btn-primary" style="width: 100%;">Logout</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -128,5 +131,30 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!user) {
+                window.location.href = 'Login.html';
+                return;
+            }
+
+            // Display user info
+            const names = (user.fullname || 'U').split(' ');
+            const initials = names.map(n => n[0]).join('').toUpperCase().slice(0, 2);
+
+            document.getElementById('profile-avatar-large').textContent = initials;
+            document.getElementById('profile-fullname').textContent = user.fullname || 'Not provided';
+            document.getElementById('profile-email-display').textContent = user.email || 'Not provided';
+            document.getElementById('profile-marketing').textContent = user.marketingOptIn ? 'Yes, I want to receive marketing messages' : 'No, I opted out';
+
+            // Logout button
+            document.getElementById('logout-profile-btn').addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.href = 'Login.html';
+            });
+        });
+    </script>
 </body>
 </html>

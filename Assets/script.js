@@ -6,6 +6,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enable animations that require JS
     document.body.classList.add('js-enabled');
 
+    // --- Check login status and update header ---
+    const user = JSON.parse(localStorage.getItem('user'));
+    const signinLink = document.getElementById('signin-link');
+    const profileSection = document.getElementById('profile-section');
+    const profileAvatar = document.getElementById('profile-avatar');
+    const profileDropdown = document.getElementById('profile-dropdown');
+    const profileName = document.getElementById('profile-name');
+    const profileEmail = document.getElementById('profile-email');
+    const avatarInitials = document.getElementById('avatar-initials');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    if (user) {
+        // User is logged in
+        if (signinLink) signinLink.style.display = 'none';
+        if (profileSection) profileSection.style.display = 'flex';
+        if (profileName) profileName.textContent = user.fullname || 'User';
+        if (profileEmail) profileEmail.textContent = user.email || 'email@example.com';
+
+        // Generate initials
+        const names = (user.fullname || 'U').split(' ');
+        const initials = names.map(n => n[0]).join('').toUpperCase().slice(0, 2);
+        if (avatarInitials) avatarInitials.textContent = initials;
+    } else {
+        // User is not logged in
+        if (signinLink) signinLink.style.display = 'block';
+        if (profileSection) profileSection.style.display = 'none';
+    }
+
+    // Profile dropdown toggle
+    if (profileAvatar) {
+        profileAvatar.addEventListener('click', () => {
+            if (profileDropdown) {
+                profileDropdown.style.display = profileDropdown.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Logout functionality
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('user');
+            window.location.href = '/index.html';
+        });
+    }
+
+    // Close dropdown when clicking elsewhere
+    document.addEventListener('click', (e) => {
+        if (profileAvatar && profileDropdown && !e.target.closest('.profile-section')) {
+            profileDropdown.style.display = 'none';
+        }
+    });
+
     // --- Mobile navigation toggle ---
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
