@@ -48,11 +48,16 @@ app.post('/api/signup', async (req, res) => {
         }
 
         // Check if email already exists
-        const { data: existingUser } = await supabase
+        const { data: existingUser, error: checkError } = await supabase
             .from('users')
             .select('email')
             .eq('email', email)
             .single();
+
+        if (checkError && checkError.code !== 'PGRST116') {
+            console.error('Check user error:', checkError);
+            return res.status(400).json({ error: 'Database error: ' + checkError.message });
+        }
 
         if (existingUser) {
             return res.status(400).json({ error: 'Email already registered' });
@@ -70,14 +75,14 @@ app.post('/api/signup', async (req, res) => {
             .select();
 
         if (error) {
-            console.error('Signup error:', error);
-            return res.status(400).json({ error: error.message });
+            console.error('Signup insert error:', error);
+            return res.status(400).json({ error: 'Database error: ' + error.message });
         }
 
         res.json({ success: true, message: 'Account created successfully. You can now sign in.', email });
     } catch (error) {
-        console.error('Signup error:', error);
-        res.status(500).json({ error: 'Server error during signup' });
+        console.error('Signup catch error:', error);
+        res.status(500).json({ error: 'Server error: ' + error.message });
     }
 });
 
@@ -97,7 +102,12 @@ app.post('/api/login', async (req, res) => {
             .eq('email', email)
             .single();
 
-        if (error || !user) {
+        if (error && error.code !== 'PGRST116') {
+            console.error('Login query error:', error);
+            return res.status(400).json({ error: 'Database error: ' + error.message });
+        }
+
+        if (!user) {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
 
@@ -117,8 +127,8 @@ app.post('/api/login', async (req, res) => {
             }
         });
     } catch (error) {
-        console.error('Login error:', error);
-        res.status(500).json({ error: 'Server error during login' });
+        console.error('Login catch error:', error);
+        res.status(500).json({ error: 'Server error: ' + error.message });
     }
 });
 
