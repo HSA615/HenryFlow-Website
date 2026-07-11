@@ -3,100 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HenryFlow | Login - Access Your Account">
-    <title>HenryFlow | Login</title>
+    <meta name="description" content="Sign in to your HenryFlow account.">
+    <title>HenryFlow | Sign In</title>
     <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
-    <link rel="shortcut icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
-<body class="reveal-init">
-    <div id="cursor-dot"></div>
-    <div id="cursor-glow"></div>
-    <header>
-        <div class="header-top">
-            <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow Logo" class="logo">
-            <div class="company-name">HenryFlow</div>
-            <div style="width: 60px;"></div>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow logo">
+                <span>Henry<em>Flow</em></span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Updates.html">Updates</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="Login.html" class="signin-link">Sign in</a>
+                <a href="Contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="blue-line"></div>
-        <nav>
-            <a href="../index.html" class="nav-button">Home</a>
-            <a href="Products.html" class="nav-button">Products</a>
-            <a href="Updates.html" class="nav-button">Updates</a>
-            <a href="Pricing.html" class="nav-button">Pricing</a>
-            <a href="About.html" class="nav-button">About</a>
-            <a href="Contact.html" class="nav-button">Contact</a>
-        </nav>
     </header>
 
-    <main class="auth-container">
-        <div class="glass-card auth-card reveal">
-            <h1 class="section-header">Welcome Back</h1>
-            <p class="content-paragraph">Log in to your account to manage your business assets.</p>
+    <main>
+        <div class="auth-wrap">
+            <div class="form-card auth-card reveal">
+                <h1>Welcome back</h1>
+                <p>Sign in to your account to manage your business.</p>
 
-            <form class="contact-form" style="text-align: left; margin-top: 30px;">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 0.85rem;">
-                    <label style="color: var(--text-muted); cursor: pointer;">
-                        <input type="checkbox"> Remember me
-                    </label>
-                    <a href="#" style="color: var(--primary-electric); text-decoration: none;">Forgot Password?</a>
-                </div>
-                <button type="submit" class="submit-button">Login to Dashboard</button>
-            </form>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" name="email" class="form-input" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" class="form-input" placeholder="••••••••" required>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; font-size: 0.85rem;">
+                        <label style="cursor: pointer; color: var(--slate-600);">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="Contact.html">Forgot password?</a>
+                    </div>
+                    <div id="login-status" class="form-status" style="display: none; margin-bottom: 16px;"></div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </form>
 
-            <p class="content-paragraph" style="margin-top: 30px; font-size: 0.9rem;">
-                Don't have an account? <a href="SignUp.html" style="color: var(--primary-electric); font-weight: bold; text-decoration: none;">Sign up for free</a>
-            </p>
+                <p class="auth-alt">
+                    Don't have an account? <a href="SignUp.html"><strong>Create one</strong></a>
+                </p>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-section">
-            <h4>Company</h4>
-            <ul class="footer-links">
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li><a href="CaseStudies.html">Case Studies</a></li>
-                <li><a href="Blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Products</h4>
-            <ul class="footer-links">
-                <li><a href="Products.html">All Products</a></li>
-                <li><a href="Pricing.html">Pricing</a></li>
-                <li><a href="Updates.html">Updates</a></li>
-                <li><a href="Help.html">Help Center</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Legal</h4>
-            <ul class="footer-links">
-                <li><a href="Privacy.html">Privacy Policy</a></li>
-                <li><a href="Terms.html">Terms of Service</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Stay Updated</h4>
-            <div class="footer-newsletter">
-                <p class="content-paragraph" style="font-size: 0.8rem;">Join our newsletter for the latest product updates.</p>
-                <div class="newsletter-input-group">
-                    <input type="email" class="newsletter-input" placeholder="Email address">
-                    <button class="newsletter-submit">Join</button>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand"><span>Henry<em>Flow</em></span></a>
+                <p>Practical business software for small and mid-sized companies — inventory, customer management, and compliance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Testimonials.html">Testimonials</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="InvenHelper.html">InvenHelper</a></li>
+                    <li><a href="SurveyFlow.html">Survey Flow</a></li>
+                    <li><a href="FlowCRM.html">FlowCRM</a></li>
+                    <li><a href="Updates.html">Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Help.html">Help Center</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="Login.html">Sign In</a></li>
+                    <li><a href="SignUp.html">Create Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="Privacy.html">Privacy Policy</a></li>
+                    <li><a href="Terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 HenryFlow. All rights reserved. | <a href="Privacy.html" style="color: var(--text-muted);">Privacy</a> | <a href="Terms.html" style="color: var(--text-muted);">Terms</a>
+            <span>&copy; 2026 HenryFlow. All rights reserved.</span>
+            <span><a href="Privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="Terms.html">Terms</a></span>
         </div>
     </footer>
     <script src="script.js"></script>

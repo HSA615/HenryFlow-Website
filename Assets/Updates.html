@@ -3,107 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Company Updates - HenryFlow">
+    <meta name="description" content="Product updates and release notes for HenryFlow's InvenHelper, Survey Flow, and FlowCRM.">
     <title>HenryFlow | Updates</title>
     <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
-    <link rel="shortcut icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
-<body class="reveal-init">
-    <div id="cursor-dot"></div>
-    <div id="cursor-glow"></div>
-    <header>
-        <div class="header-top">
-            <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow Logo" class="logo">
-            <div class="company-name">HenryFlow</div>
-            <div style="width: 60px;"></div>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow logo">
+                <span>Henry<em>Flow</em></span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Updates.html" class="active">Updates</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="Login.html" class="signin-link">Sign in</a>
+                <a href="Contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="blue-line"></div>
-        <nav>
-            <a href="../index.html" class="nav-button">Home</a>
-            <a href="Products.html" class="nav-button">Products</a>
-            <a href="Updates.html" class="nav-button active">Updates</a>
-            <a href="Pricing.html" class="nav-button">Pricing</a>
-            <a href="About.html" class="nav-button">About</a>
-            <a href="Contact.html" class="nav-button">Contact</a>
-        </nav>
     </header>
 
     <main>
-        <h1 class="section-header reveal" style="text-align: center; margin-bottom: 40px;">Latest Updates</h1>
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow reveal">Product Updates</span>
+                <h1 class="reveal">What's new at HenryFlow</h1>
+                <p class="lead reveal">We ship improvements continuously. Follow release notes and the latest changes for every product below.</p>
+            </div>
+        </section>
 
-        <div class="products-grid reveal">
-            <a href="InvenHelperUpdates.html" class="glass-card product-card">
-                <img src="Photos/InvenHelperLogo.webp" alt="Updates Preview" class="product-image">
-                <div class="product-info">
-                    <div class="product-title">InvenHelper Updates</div>
-                    <p class="product-summary">
-                        Stay up to date with the latest feature releases, performance improvements,
-                        and security patches for InvenHelper. Discover how we are constantly
-                        evolving to serve your business better.
-                    </p>
+        <section class="section">
+            <div class="container">
+                <div class="card-grid">
+                    <a href="InvenHelperUpdates.html" class="card product-card reveal">
+                        <img src="Photos/InvenHelperLogo.webp" alt="InvenHelper logo" class="product-logo">
+                        <h3>InvenHelper Updates</h3>
+                        <p class="product-tagline">Inventory Management</p>
+                        <p>
+                            The latest feature releases, performance improvements, and security patches for
+                            InvenHelper — updated live as changes are published.
+                        </p>
+                        <span class="card-link">View updates &rarr;</span>
+                    </a>
+                    <a href="SurveyFlowUpdates.html" class="card product-card reveal">
+                        <img src="Photos/SurveyFlowLogo.webp" alt="Survey Flow logo" class="product-logo">
+                        <h3>Survey Flow Updates</h3>
+                        <p class="product-tagline">Healthcare Compliance</p>
+                        <p>
+                            Release notes for Survey Flow, including the Version 2.0 milestone — local AI processing,
+                            automated report population, and deficiency detection.
+                        </p>
+                        <span class="card-link">View updates &rarr;</span>
+                    </a>
+                    <a href="FlowCRMUpdates.html" class="card product-card reveal">
+                        <img src="Photos/FlowCRMLogo.webp" alt="FlowCRM logo" class="product-logo">
+                        <h3>FlowCRM Updates</h3>
+                        <p class="product-tagline">Customer Relationship Management</p>
+                        <p>
+                            FlowCRM is currently in development. Release notes will be published here
+                            as soon as the product launches.
+                        </p>
+                        <span class="card-link">View updates &rarr;</span>
+                    </a>
                 </div>
-            </a>
-            <a href="FlowCRMUpdates.html" class="glass-card product-card">
-                <img src="Photos/FlowCRMLogo.webp" alt="Updates Preview" class="product-image">
-                <div class="product-info">
-                    <div class="product-title">FlowCRM Updates</div>
-                    <p class="product-summary">
-                        Stay up to date with the latest feature releases and improvements for FlowCRM, helping you manage your client relationships more effectively.
-                    </p>
-                </div>
-            </a>
-            <a href="SurveyFlowUpdates.html" class="glass-card product-card">
-                <img src="Photos/SurveyFlowLogo.webp" alt="Updates Preview" class="product-image">
-                <div class="product-info">
-                    <div class="product-title">Survey Flow Updates</div>
-                    <p class="product-summary">
-                        Explore the latest enhancements in Survey Flow, from new question types to advanced analytics tools for deeper customer insights.
-                    </p>
-                </div>
-            </a>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-section">
-            <h4>Company</h4>
-            <ul class="footer-links">
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li><a href="CaseStudies.html">Case Studies</a></li>
-                <li><a href="Blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Products</h4>
-            <ul class="footer-links">
-                <li><a href="Products.html">All Products</a></li>
-                <li><a href="Pricing.html">Pricing</a></li>
-                <li><a href="Updates.html">Updates</a></li>
-                <li><a href="Help.html">Help Center</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Legal</h4>
-            <ul class="footer-links">
-                <li><a href="Privacy.html">Privacy Policy</a></li>
-                <li><a href="Terms.html">Terms of Service</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Stay Updated</h4>
-            <div class="footer-newsletter">
-                <p class="content-paragraph" style="font-size: 0.8rem;">Join our newsletter for the latest product updates.</p>
-                <div class="newsletter-input-group">
-                    <input type="email" class="newsletter-input" placeholder="Email address">
-                    <button class="newsletter-submit">Join</button>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand"><span>Henry<em>Flow</em></span></a>
+                <p>Practical business software for small and mid-sized companies — inventory, customer management, and compliance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Testimonials.html">Testimonials</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="InvenHelper.html">InvenHelper</a></li>
+                    <li><a href="SurveyFlow.html">Survey Flow</a></li>
+                    <li><a href="FlowCRM.html">FlowCRM</a></li>
+                    <li><a href="Updates.html">Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Help.html">Help Center</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="Login.html">Sign In</a></li>
+                    <li><a href="SignUp.html">Create Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="Privacy.html">Privacy Policy</a></li>
+                    <li><a href="Terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 HenryFlow. All rights reserved. | <a href="Privacy.html" style="color: var(--text-muted);">Privacy</a> | <a href="Terms.html" style="color: var(--text-muted);">Terms</a>
+            <span>&copy; 2026 HenryFlow. All rights reserved.</span>
+            <span><a href="Privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="Terms.html">Terms</a></span>
         </div>
     </footer>
     <script src="script.js"></script>

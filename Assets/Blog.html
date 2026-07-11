@@ -3,105 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HenryFlow Blog - Industry Insights and Updates">
+    <meta name="description" content="News and insights from HenryFlow — product announcements, releases, and practical advice for running your business.">
     <title>HenryFlow | Blog</title>
     <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
-    <link rel="shortcut icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
-<body class="reveal-init">
-    <div id="cursor-dot"></div>
-    <div id="cursor-glow"></div>
-    <header>
-        <div class="header-top">
-            <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow Logo" class="logo">
-            <div class="company-name">HenryFlow</div>
-            <div style="width: 60px;"></div>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow logo">
+                <span>Henry<em>Flow</em></span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Updates.html">Updates</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="Login.html" class="signin-link">Sign in</a>
+                <a href="Contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="blue-line"></div>
-        <nav>
-            <a href="../index.html" class="nav-button">Home</a>
-            <a href="Products.html" class="nav-button">Products</a>
-            <a href="Updates.html" class="nav-button">Updates</a>
-            <a href="Pricing.html" class="nav-button">Pricing</a>
-            <a href="About.html" class="nav-button">About</a>
-            <a href="Contact.html" class="nav-button">Contact</a>
-        </nav>
     </header>
 
     <main>
-        <div class="hero-section reveal">
-            <h1 class="section-header">HenryFlow Insights</h1>
-            <p class="content-paragraph">Sharing our expertise on inventory and finance management for small businesses.</p>
-        </div>
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow reveal">Blog</span>
+                <h1 class="reveal">News &amp; insights</h1>
+                <p class="lead reveal">Product announcements, releases, and updates from the HenryFlow team.</p>
+            </div>
+        </section>
 
-        <div class="blog-grid reveal">
-            <a href="#" class="glass-card blog-card">
-                <div class="blog-image" style="background: linear-gradient(45deg, var(--deep-indigo), var(--accent-blue));"></div>
-                <div class="product-info">
-                    <div class="blog-date">June 09, 2026</div>
-                    <h3 class="product-title">The Future of AI in Inventory Management</h3>
-                    <p class="product-summary">Discover how machine learning is helping small businesses predict stock needs with 99% accuracy.</p>
+        <section class="section">
+            <div class="container">
+                <div class="card-grid">
+                    <a href="SurveyFlowUpdates.html" class="card post-card reveal">
+                        <div class="post-tag">Release</div>
+                        <h3>Survey Flow 2.0: compliance AI that never leaves your building</h3>
+                        <p>
+                            Our biggest release yet moves all AI processing fully on-premises, adds automated
+                            report population for AHCA and Joint Commission forms, and introduces one-click
+                            evidence binders. Here's what's new in Version 2.0.
+                        </p>
+                        <div class="post-date">June 2026 &middot; Survey Flow</div>
+                    </a>
+                    <a href="InvenHelper.html" class="card post-card reveal">
+                        <div class="post-tag">Product</div>
+                        <h3>How InvenHelper's AI assistant answers your inventory questions</h3>
+                        <p>
+                            From "what's running low this week?" to "which supplier do I reorder from most?" —
+                            a look at how the built-in assistant turns your stock data into instant,
+                            plain-English answers.
+                        </p>
+                        <div class="post-date">May 2026 &middot; InvenHelper</div>
+                    </a>
+                    <a href="FlowCRM.html" class="card post-card reveal">
+                        <div class="post-tag">Announcement</div>
+                        <h3>FlowCRM is in development: a CRM without the clutter</h3>
+                        <p>
+                            We're building a customer relationship management tool focused on the essentials
+                            small teams actually use — lead pipelines, interaction history, and nothing you
+                            don't need. Here's our thinking.
+                        </p>
+                        <div class="post-date">April 2026 &middot; FlowCRM</div>
+                    </a>
                 </div>
-            </a>
-            <a href="#" class="glass-card blog-card">
-                <div class="blog-image" style="background: linear-gradient(45deg, var(--primary-electric), var(--deep-indigo));"></div>
-                <div class="product-info">
-                    <div class="blog-date">June 02, 2026</div>
-                    <h3 class="product-title">5 Tips for Better Client Retention</h3>
-                    <p class="product-summary">Learn how a streamlined CRM can help you build deeper relationships with your customers.</p>
-                </div>
-            </a>
-            <a href="#" class="glass-card blog-card">
-                <div class="blog-image" style="background: linear-gradient(45deg, var(--accent-blue), var(--primary-electric));"></div>
-                <div class="product-info">
-                    <div class="blog-date">May 25, 2026</div>
-                    <h3 class="product-title">Understanding Customer Sentiment</h3>
-                    <p class="product-summary">Why gathering structured feedback is the secret weapon for rapid product iteration.</p>
-                </div>
-            </a>
-        </div>
+            </div>
+        </section>
+
+        <section class="cta-band reveal">
+            <h2>Follow along</h2>
+            <p>New releases land on the Updates page first — check there for the latest changes to every product.</p>
+            <div class="hero-actions">
+                <a href="Updates.html" class="btn btn-light">View All Updates</a>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-section">
-            <h4>Company</h4>
-            <ul class="footer-links">
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li><a href="CaseStudies.html">Case Studies</a></li>
-                <li><a href="Blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Products</h4>
-            <ul class="footer-links">
-                <li><a href="Products.html">All Products</a></li>
-                <li><a href="Pricing.html">Pricing</a></li>
-                <li><a href="Updates.html">Updates</a></li>
-                <li><a href="Help.html">Help Center</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Legal</h4>
-            <ul class="footer-links">
-                <li><a href="Privacy.html">Privacy Policy</a></li>
-                <li><a href="Terms.html">Terms of Service</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Stay Updated</h4>
-            <div class="footer-newsletter">
-                <p class="content-paragraph" style="font-size: 0.8rem;">Join our newsletter for the latest product updates.</p>
-                <div class="newsletter-input-group">
-                    <input type="email" class="newsletter-input" placeholder="Email address">
-                    <button class="newsletter-submit">Join</button>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand"><span>Henry<em>Flow</em></span></a>
+                <p>Practical business software for small and mid-sized companies — inventory, customer management, and compliance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Testimonials.html">Testimonials</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="InvenHelper.html">InvenHelper</a></li>
+                    <li><a href="SurveyFlow.html">Survey Flow</a></li>
+                    <li><a href="FlowCRM.html">FlowCRM</a></li>
+                    <li><a href="Updates.html">Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Help.html">Help Center</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="Login.html">Sign In</a></li>
+                    <li><a href="SignUp.html">Create Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="Privacy.html">Privacy Policy</a></li>
+                    <li><a href="Terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 HenryFlow. All rights reserved. | <a href="Privacy.html" style="color: var(--text-muted);">Privacy</a> | <a href="Terms.html" style="color: var(--text-muted);">Terms</a>
+            <span>&copy; 2026 HenryFlow. All rights reserved.</span>
+            <span><a href="Privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="Terms.html">Terms</a></span>
         </div>
     </footer>
     <script src="script.js"></script>

@@ -3,106 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact HenryFlow - Get in Touch">
+    <meta name="description" content="Contact HenryFlow — questions, demo requests, and support for InvenHelper, Survey Flow, and FlowCRM.">
     <title>HenryFlow | Contact</title>
     <link rel="icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
-    <link rel="shortcut icon" href="Photos/HenryFlowLogo.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
-<body class="reveal-init">
-    <div id="cursor-dot"></div>
-    <div id="cursor-glow"></div>
-    <header>
-        <div class="header-top">
-            <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow Logo" class="logo">
-            <div class="company-name">HenryFlow</div>
-            <div style="width: 60px;"></div>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="Photos/HenryFlowLogo.webp" alt="HenryFlow logo">
+                <span>Henry<em>Flow</em></span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Updates.html">Updates</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html" class="active">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="Login.html" class="signin-link">Sign in</a>
+                <a href="Contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="blue-line"></div>
-        <nav>
-            <a href="../index.html" class="nav-button">Home</a>
-            <a href="Products.html" class="nav-button">Products</a>
-            <a href="Updates.html" class="nav-button">Updates</a>
-            <a href="Pricing.html" class="nav-button">Pricing</a>
-            <a href="About.html" class="nav-button">About</a>
-            <a href="Contact.html" class="nav-button active">Contact</a>
-        </nav>
     </header>
 
     <main>
-        <div class="contact-container">
-            <div class="glass-card reveal" style="text-align: center;">
-                <h1 class="section-header">Get In Touch</h1>
-                <p class="content-paragraph">
-                    Have questions about our products or want to request a demo? We'd love to hear from you.
-                    Our team is ready to help you elevate your business efficiency.
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow reveal">Contact</span>
+                <h1 class="reveal">Get in touch</h1>
+                <p class="lead reveal">
+                    Have a question about our products, want to request a demo, or need support?
+                    Send us a message and we'll get back to you promptly.
                 </p>
-
-                <form id="contact-form" action="https://formsubmit.co/ajax/hsalberts321@gmail.com" method="POST" novalidate>
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New contact message from HenryFlow website">
-                    <div class="form-group">
-                        <label for="email">Contact Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="product">Product Name</label>
-                        <input type="text" id="product" name="product" class="form-input" placeholder="e.g. InvenHelper">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-input" rows="5" placeholder="Your message here..." required></textarea>
-                    </div>
-                    <div id="form-status" class="form-status" aria-live="polite"></div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
             </div>
-        </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 680px;">
+                <div class="form-card reveal">
+                    <form id="contact-form" action="https://formspree.io/f/mzdnpzov" method="POST" novalidate>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product (optional)</label>
+                            <input type="text" id="product" name="product" class="form-input" placeholder="e.g. InvenHelper, Survey Flow">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-input" rows="6" placeholder="Tell us a bit about what you need..." required></textarea>
+                        </div>
+                        <div id="form-status" class="form-status" aria-live="polite"></div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <p class="form-note">We typically respond within one business day. Your message goes directly to the HenryFlow team.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-section">
-            <h4>Company</h4>
-            <ul class="footer-links">
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li><a href="CaseStudies.html">Case Studies</a></li>
-                <li><a href="Blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Products</h4>
-            <ul class="footer-links">
-                <li><a href="Products.html">All Products</a></li>
-                <li><a href="Pricing.html">Pricing</a></li>
-                <li><a href="Updates.html">Updates</a></li>
-                <li><a href="Help.html">Help Center</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Legal</h4>
-            <ul class="footer-links">
-                <li><a href="Privacy.html">Privacy Policy</a></li>
-                <li><a href="Terms.html">Terms of Service</a></li>
-                <li><a href="FAQ.html">FAQ</li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Stay Updated</h4>
-            <div class="footer-newsletter">
-                <p class="content-paragraph" style="font-size: 0.8rem;">Join our newsletter for the latest product updates.</p>
-                <div class="newsletter-input-group">
-                    <input type="email" class="newsletter-input" placeholder="Email address">
-                    <button class="newsletter-submit">Join</button>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand"><span>Henry<em>Flow</em></span></a>
+                <p>Practical business software for small and mid-sized companies — inventory, customer management, and compliance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Testimonials.html">Testimonials</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="InvenHelper.html">InvenHelper</a></li>
+                    <li><a href="SurveyFlow.html">Survey Flow</a></li>
+                    <li><a href="FlowCRM.html">FlowCRM</a></li>
+                    <li><a href="Updates.html">Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Help.html">Help Center</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="Login.html">Sign In</a></li>
+                    <li><a href="SignUp.html">Create Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="Privacy.html">Privacy Policy</a></li>
+                    <li><a href="Terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 HenryFlow. All rights reserved. | <a href="Privacy.html" style="color: var(--text-muted);">Privacy</a> | <a href="Terms.html" style="color: var(--text-muted);">Terms</a>
+            <span>&copy; 2026 HenryFlow. All rights reserved.</span>
+            <span><a href="Privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="Terms.html">Terms</a></span>
         </div>
     </footer>
     <script src="script.js"></script>
